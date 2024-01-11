@@ -1,1 +1,0 @@
-const svedish = 3;
