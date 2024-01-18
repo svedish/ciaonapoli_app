@@ -1,2 +1,29 @@
 <!DOCTYPE html>
-WebSocket example
+<html>
+
+<head></head>
+<body>
+    WebSocket example
+</body>
+
+<script>
+
+let ws;
+
+// Prendiamo il protocollo dall'oggetto globale window e assegnamo wss o ws a seconda che il protocollo sia sicuro (https) o meno (http)
+const proto = window.location.protocol === 'https' ? 'wss' : 'ws';
+
+// Poi assegnamo alla variabile ws un nuovo WebSocket che è un oggetto built-in di window nel DOM
+// E gli passiamo l'URL a cui connettersi formandolo con il protocollo e il dominio
+ws = new WebSocket(`${proto}://${window.location.host}`);
+console.log(ws);
+
+// Infine dobbiamo gestire eventuali messaggi che arrivano al client dal server
+// In questo caso facciamo giusto un console.log dei dati che arrivano ma ovviamente 
+// in uno scenario di produzione l'azione potrebbe essere quella di aggiornare
+// la pagina o altro che fornisca un feedback utile all'utente.
+ws.onmessage = (event) => {console.log(event.data)};
+
+</script>
+
+</html>
