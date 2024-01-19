@@ -88,7 +88,6 @@ wss.broadcast = function broadcast(data) {
 
 // Importiamo la lireria sqlite3
 const sqlite = require('sqlite3');
-const { serialize } = require('v8');
 
 // E creiamo un nuovo database con l'opzione :memory: che indica che il database
 // sarà interamente salvato nella RAM del sistema, non su disco.
