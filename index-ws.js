@@ -8,6 +8,7 @@ app.get('/', function(req, res) {
     res.sendFile('index.html', {root: __dirname});
 });
 
+
 // Poi facciamo in moodo che il server risponda alle richieste sempre con la app Express creata sopra
 server.on('request', app);
 // E mettiamo il server in ascolto sulla porta 3000 facendogli produrre una conferma a schermo
